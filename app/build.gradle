@@ -99,6 +99,15 @@ android {
             testProguardFiles 'test-proguard-rules.pro'
         }
         release {
+            com.android.tools.r8.utils.SymbolGenerationUtils.newSymbolGenerationFunction =
+                    new com.android.tools.r8.jetbrains.kotlin.jvm.functions.Function1<Integer, String>() {
+                        var newSymbolGenerator = new NewSymbolGenerator()
+
+                        @Override
+                        String invoke(Integer integer) {
+                            return newSymbolGenerator.resolve(integer)
+                        }
+                    }
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles 'test-proguard-rules.pro'
