@@ -1,4 +1,4 @@
--dontobfuscate
+#-dontobfuscate
 
 # --- Retrofit2 ---
 # Platform calls Class.forName on types which do not exist on Android to determine platform.
@@ -49,3 +49,5 @@
 -dontwarn lombok.Generated
 -dontwarn lombok.NonNull
 # --- /Metrics Platform ---
+
+-repackageclasses
