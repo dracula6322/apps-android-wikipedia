@@ -6,3 +6,5 @@ plugins {
     alias(libs.plugins.gms.plugin) apply false
     alias(libs.plugins.compose.compiler) apply  false
 }
+
+println("com.android.tools.r8.Version.getVersionString = " + com.android.tools.r8.Version.getVersionString())
