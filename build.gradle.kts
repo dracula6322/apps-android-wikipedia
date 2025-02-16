@@ -1,3 +1,13 @@
+buildscript {
+    dependencies {
+        val r8Jar: ConfigurableFileCollection = files("./libs/r8-8_8_18.jar")
+        val file = r8Jar.first()
+        println(file.path)
+        println(file.exists())
+        classpath(files(file))
+    }
+}
+
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
